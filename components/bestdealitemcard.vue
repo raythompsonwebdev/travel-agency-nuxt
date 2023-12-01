@@ -16,18 +16,12 @@
         </span>
         <p class="bestdeal-text">Location: {{ bestdealitem.location }}.</p>
         <p class="bestdeal-text">Available: {{ bestdealitem.month }}.</p>
-        <!-- <NuxtLink
+        <NuxtLink
           class="bestdeal-link"
-          :to="{
-            name: 'bestdeal',
-            params: {
-              itemid: bestdealitem.itemid,
-              slug: bestdealitem.location,
-            },
-          }"
+          to="/bestdeal"
         >
           View Details
-        </NuxtLink> -->
+        </NuxtLink>
       </figcaption>
     </figure>
   </article>

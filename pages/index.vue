@@ -24,15 +24,11 @@
 <script>
 
 import bannerImage from "@/assets/images/travel-agency-website-banner-image.jpg";
-// import destinations from "@/assets/json/destinations.json";
-// import featuredholidayitems from "@/assets/json/featured.json";
 
 export default {
   name: "HomePage",
   data() {
     return {
-      // destinations,
-      // featuredholidayitems,
       show: true,
       bannerImage,
     };
@@ -45,18 +41,18 @@ export default {
 //     this.destinationitems = destinationitems;
 //     this.featuredholidayitems = featuredholidayitems;
 //   },
-//   methods: {
-//     sideBarFunction(event) {
-//       event.preventDefault();
-//       const el = document.getElementById("home-page-sidebar");
-//       const box = el.getAttribute("class");
-//       if (box === "hide") {
-//         el.setAttribute("class", "show");
-//       } else {
-//         el.setAttribute("class", "hide");
-//       }
-//     },
-//   },
+  methods: {
+    sideBarFunction(event) {
+      event.preventDefault();
+      const el = document.getElementById("home-page-sidebar");
+      const box = el.getAttribute("class");
+      if (box === "hide") {
+        el.setAttribute("class", "show");
+      } else {
+        el.setAttribute("class", "hide");
+      }
+    },
+  },
 };
 </script>
 

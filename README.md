@@ -20,7 +20,7 @@ Web application design is based on a photoshop templates downloaded from website
 - [eslint](https://eslint.org/)
 - [postcss](https://postcss.org/)
 - [stylelint](https://stylelint.io/)
-- [axios](https://axios-http.com/docs/intro/)
+
 
 # Nuxt 3 Minimal Starter
 

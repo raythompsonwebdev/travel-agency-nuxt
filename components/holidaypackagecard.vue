@@ -13,22 +13,16 @@
       <figcaption class="holiday-pkg-caption">
         <p class="holiday-pkg-txt">
           Location :
-          {{ holidaypackages.location }} &nbsp;&nbsp;&nbsp;&nbsp;Available :
+          {{ holidaypackages.location }} Available :
           {{ holidaypackages.available }}
         </p>
         <p class="holiday-pkg-txt">{{ holidaypackages.text }}</p>
-        <!-- <NuxtLink
-          class="holiday-pkg-link"
-          :to="{
-            name: 'HolidayPackage',
-            params: {
-              itemid: holidaypackage.id,
-              slug: holidaypackage.location,
-            },
-          }"
+        <NuxtLink          
+          to= "/holidaypackages/"
+          class="holiday-pkg-link"         
         >
           View Details
-        </NuxtLink> -->
+        </NuxtLink>
       </figcaption>
     </figure>
   </article>
@@ -36,19 +30,20 @@
 
 <script>
 
-export default {
-  name: "holidaypackagecard",
-  props: {
-    holidaypackages: {
-      type: Object,
-      default: null,
+  export default {
+    name: "holidaypackagecard",
+    props: {
+      holidaypackages: {
+        type: Object,
+        default: null,
+      },
     },
-  },
-  
-  flushCom() {
-    this.$router.go();
-  },
-};
+    
+    flushCom() {
+      this.$router.go();
+    },
+  };
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

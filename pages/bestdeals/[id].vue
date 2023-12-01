@@ -2,25 +2,26 @@
   <!-- <transition name="fade" tag="div"> -->
     <div v-if="singlebestdeal" class="singlebestdeal" key="/best">
       <article class="single-best-details">
-        <h1 class="single-best-title">{{ singlebestdeal.title }}</h1>
+        <h1 class="single-best-title">{{ singlebestdeal[0].title }}</h1>        
+        <h1 class="single-best-title">{{ id }}</h1> 
         <span class="single-best-price">
           from
-          <span class="single-best-offer">{{ singlebestdeal.price }}</span>
+          <span class="single-best-offer">{{ singlebestdeal[0].price }}</span>
         </span>
-        <p class="single-best-txt">{{ singlebestdeal.text }}</p>
+        <p class="single-best-txt">{{ singlebestdeal[0].text }}</p>
 
         <figure class="single-best-item">
           <img
-            :src="singlebestdeal.url"
-            :alt="singlebestdeal.title"
+            :src="singlebestdeal[0].url"
+            :alt="singlebestdeal[0].title"
             class="single-best-img"
           />
           <figcaption class="single-best-caption">
             <h3 class="single-best-location">
-              Location : {{ singlebestdeal.location }}
+              Location : {{ singlebestdeal[0].location }}
             </h3>
             <p class="single-best-rating">
-              Rating: {{ singlebestdeal.rating }} Star
+              Rating: {{ singlebestdeal[0].rating }} Star
             </p>
           </figcaption>
         </figure>
@@ -30,65 +31,57 @@
   <!-- </transition> -->
 </template>
 
+
+<!-- <script setup lang="ts">
+const route = useRoute()
+const { data: mountain } = await useFetch(`/api/mountains/${route.params.slug}`)
+</script> -->
+
+<!-- <script setup>
+  const { id } = useRoute().params
+</script> -->
+
 <script>
 
+import singlebestdeal from "@/assets/json/bestdeals.json";
+const { id } = useRoute().params
 
-export default {
-  name: "bestdeal",
-  props: {
-    itemid: { type: String, required: true },
-  },
-  data() {
-    return {
-      singlebestdeal: {},
-    };
-  },
-  methods: {
-    async initData() {
-      const result = await axios.get(`/api/bestdeal/${parseInt(this.itemid)}`);
-      const { data } = result;
-      this.singlebestdeal = data;
+  export default {
+    name: "bestdeal",
+    data() {
+      return {
+        singlebestdeal,
+        id,
+      };
     },
-  },
-  created() {
-    this.initData();
-  },
+    methods: {
+      // async initData() {
+      //   const result = await axios.get(`/api/bestdeal/${parseInt(this.itemid)}`);
+      //   const { data } = result;
+      //   this.singlebestdeal = data;
+      // },
 
-  beforeRouteUpdate(to, from, next) {
-    this.initData();
-    next();
-  },
-};
+      initData() {
+      const result = singlebestdeal.filter((single)=>{
+        return single.id === id;        
+      }); 
+      this.singlebestdeal = result;
+    }
+    },
+    created() {
+      this.initData();
+    },
+
+    beforeRouteUpdate(to, from, next) {
+      this.initData();
+      next();
+    },
+  };
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style lang="scss" scoped>
-.fade-enter-active {
-  animation: coming 0.5s;
-  animation-delay: 0.5s;
-  opacity: 0;
-}
-.fade-leave-active {
-  animation: going 0.5s;
-}
-@keyframes coming {
-  from {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0px);
-    opacity: 1;
-  }
-}
-@keyframes going {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-}
 .singlebestdeal {
   border: 2px #ededeb solid;
   margin: 2em auto;

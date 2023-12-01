@@ -26,7 +26,7 @@
         </NuxtLink>
       </li>
       <li class="inner-footer-item">
-        <NuxtLink to="/service" class="footer-nav-item r-item">
+        <NuxtLink to="/services" class="footer-nav-item r-item">
           Services
         </NuxtLink>
       </li>

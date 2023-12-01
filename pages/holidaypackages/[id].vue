@@ -1,54 +1,72 @@
 <template>
   <div v-if="singleholidaypackage" class="singleholidaypackage">
     <article class="single-item-details">
-      <h2 class="single-item-title">{{ singleholidaypackage.title }}</h2>
+      <h2 class="single-item-title">{{ singleholidaypackage[0].title }}</h2>
+      <h2 class="single-item-title">{{ id }}</h2> 
       <span class="single-item-price">
         from
-        <span class="single-item-offer">{{ singleholidaypackage.price }}</span>
+        <span class="single-item-offer">{{ singleholidaypackage[0].price }}</span>
       </span>
-      <p class="single-item-text">{{ singleholidaypackage.text }}</p>
+      <p class="single-item-text">{{ singleholidaypackage[0].text }}</p>
 
       <figure class="single-item">
         <img
           class="single-item-img"
-          :src="singleholidaypackage.url"
-          :alt="singleholidaypackage.title"
+          :src="singleholidaypackage[0].url"
+          :alt="singleholidaypackage[0].title"
         />
         <figcaption class="single-item-caption">
           <h3 class="single-item-location">
-            Location : {{ singleholidaypackage.location }}
+            Location : {{ singleholidaypackage[0].location }}
           </h3>
           <p class="single-item-rating">
-            Rating: {{ singleholidaypackage.rating }} Star
+            Rating: {{ singleholidaypackage[0].rating }} Star
           </p>
         </figcaption>
       </figure>
     </article>
   </div>
-  <NotFoundpage v-else />
 </template>
+
+<!-- <script setup lang="ts">
+const route = useRoute()
+const { data: mountain } = await useFetch(`/api/mountains/${route.params.slug}`)
+</script> -->
+
+<!-- <script setup>
+  const { id } = useRoute().params
+</script> -->
 
 <script>
 
+import singleholidaypackage from "@/assets/json/holidaypackages.json";
+
+const { id } = useRoute().params
+
 export default {
   name: "holidaypackage",
-  title: "Holiday Package Page",
-  props: {
-    itemid: { type: String, required: true },
-  },
+  title: "Holiday Package Page",  
   data() {
     return {
-      singleholidaypackage: {},
+      singleholidaypackage,
+      id,
     };
   },
   methods: {
-    async initData() {
-      const result = await axios.get(
-        `/api/holidaypackage/${parseInt(this.itemid)}`
-      );
-      const { data } = result;
-      this.singleholidaypackage = data;
-    },
+    // async initData() {
+    //   const result = await axios.get(
+    //     `/api/holidaypackage/${parseInt(this.itemid)}`
+    //   );
+    //   const { data } = result;
+    //   this.singleholidaypackage = data;
+    // },
+
+    initData() {
+      const result = singleholidaypackage.filter((single)=>{
+        return single.id === id;        
+      }); 
+      this.singleholidaypackage = result;
+    }
   },
   created() {
     this.initData();
@@ -61,33 +79,7 @@ export default {
 </script>
 
 <style lang="scss">
-.fade-enter-active {
-  animation: coming 0.5s;
-  animation-delay: 0.5s;
-  opacity: 0;
-}
-.fade-leave-active {
-  animation: going 0.5s;
-}
-@keyframes coming {
-  from {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0px);
-    opacity: 1;
-  }
-}
-@keyframes going {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-}
+
 .singleholidaypackage {
   border: 2px #ededeb solid;
   margin: 2em auto;

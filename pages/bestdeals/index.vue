@@ -20,8 +20,12 @@
 </template>
 
 <script>
+
+
 import bestdealitems from "@/assets/json/bestdeals.json";
 import {locations, prices, ratings, seasons} from "@/assets/json/filternav.json";
+
+
 
 export default {
   name: "bestdeals", 
