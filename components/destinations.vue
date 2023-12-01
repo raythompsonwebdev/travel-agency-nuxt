@@ -24,16 +24,10 @@
   </section>
 </template>
 
-<script >
+<script>
 import destinations from "@/assets/json/destinations.json";
 export default {
-  name: "Destinations",
-  // props: {
-  //   destinations: {
-  //     type: Array,
-  //     default: null,
-  //   },
-  // },
+  name: "destinations",
   // setup(props) {
   //   // setup() receives props as the first argument.
   //   console.log(props.destinations)

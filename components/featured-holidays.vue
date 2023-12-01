@@ -34,15 +34,16 @@
 import featuredholidayitems from "@/assets/json/featured.json";
 
 export default {
-  name: "featuredholidays",
+  name: "featured-holidays",
 
   data() {
     return {
-      featuredholidayitems
+      featuredholidayitems,
     };
   },
   computed: {
     holidayImage(url) {
+      // eslint-disable-next-line no-undef
       return require(`${url}`);
     },
   },

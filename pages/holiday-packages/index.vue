@@ -1,6 +1,6 @@
 <template>
   <div class="HolidayPackages">
-    <filternav
+    <filter-nav
       :seasons="seasons"
       :prices="prices"
       :locations="locations"
@@ -12,24 +12,30 @@
     <main id="holiday-items">
       <!--HolidayPackage Item component -->
       <!-- <transition-group name="fade" tag="div"> -->
-        <div
-          v-for="holidaypackage in filteredPacks"
-          :key="holidaypackage.id"
-        >
-          <holidaypackagecard :holidaypackages="holidaypackage" />
-        </div>
+      <div v-for="holidaypackage in filteredPacks" :key="holidaypackage.id">
+        <holidaypackage-card :holidaypackages="holidaypackage" />
+      </div>
       <!-- </transition-group> -->
     </main>
   </div>
 </template>
 
 <script>
-
 import holidaypackages from "@/assets/json/holidaypackages.json";
-import {locations, prices, ratings, seasons} from "@/assets/json/filternav.json";
+import {
+  locations,
+  prices,
+  ratings,
+  seasons,
+} from "@/assets/json/filternav.json";
+
+// eslint-disable-next-line no-undef
+useHead({
+  title: "Travel Agency | Holiday Packages",
+});
 
 export default {
-  name: "holidaypackages",
+  name: "holiday-packages",
   data() {
     return {
       seasons,
@@ -52,7 +58,7 @@ export default {
         "autumn" === this.selected
       ) {
         return this.holidaypackages.filter(
-          (holidaypackageitem) => holidaypackageitem.season === this.selected
+          (holidaypackageitem) => holidaypackageitem.season === this.selected,
         );
       } else if (
         "london" === this.selected ||
@@ -66,7 +72,7 @@ export default {
         "tajmahal" === this.selected
       ) {
         return this.holidaypackages.filter(
-          (holidaypackageitem) => holidaypackageitem.location === this.selected
+          (holidaypackageitem) => holidaypackageitem.location === this.selected,
         );
       } else if (
         "one" === this.selected ||
@@ -76,7 +82,7 @@ export default {
         "five" === this.selected
       ) {
         return this.holidaypackages.filter(
-          (holidaypackageitem) => holidaypackageitem.rating === this.selected
+          (holidaypackageitem) => holidaypackageitem.rating === this.selected,
         );
       } else if (
         "$399 - $499" === this.selected ||
@@ -86,7 +92,7 @@ export default {
         "$999 +" === this.selected
       ) {
         return this.holidaypackages.filter(
-          (holidaypackageitem) => holidaypackageitem.price === this.selected
+          (holidaypackageitem) => holidaypackageitem.price === this.selected,
         );
       } else {
         return this.holidaypackages;
@@ -106,6 +112,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

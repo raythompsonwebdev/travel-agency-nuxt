@@ -1,7 +1,6 @@
 <template>
   <article class="bestdeal-details">
-   
-     <figure v-if="bestdealitem" class="bestdeal-details-item">
+    <figure v-if="bestdealitem" class="bestdeal-details-item">
       <img
         :src="bestdealitem.url"
         :alt="bestdealitem.title"
@@ -16,22 +15,15 @@
         </span>
         <p class="bestdeal-text">Location: {{ bestdealitem.location }}.</p>
         <p class="bestdeal-text">Available: {{ bestdealitem.month }}.</p>
-        <NuxtLink
-          class="bestdeal-link"
-          to="/bestdeal"
-        >
-          View Details
-        </NuxtLink>
+        <NuxtLink class="bestdeal-link" to="/bestdeal"> View Details </NuxtLink>
       </figcaption>
     </figure>
   </article>
 </template>
 
 <script>
-
-
 export default {
-  name: "bestdealcard",
+  name: "bestdeal-card",
   props: {
     bestdealitem: {
       type: Object,

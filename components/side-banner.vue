@@ -30,11 +30,10 @@
 </template>
 
 <script>
-
-import bannerImage from '@/assets/images/travel-agency-website-sidebar-banner-image.jpg';
-import bannerImageLabel from '@/assets/images/travel-agency-website-sidebar-banner-image-label.jpg';
+import bannerImage from "@/assets/images/travel-agency-website-sidebar-banner-image.jpg";
+import bannerImageLabel from "@/assets/images/travel-agency-website-sidebar-banner-image-label.jpg";
 export default {
-  name: "sidebanner",
+  name: "side-banner",
   data() {
     return {
       show: "true",

@@ -3,69 +3,40 @@
     <button id="toggle-menu" @click="naviFunction">Menu</button>
     <ul id="site-inner-nav" class="hide">
       <li class="site-inner-nav-item">
-        <NuxtLink
-          to="/"
-          class="nav-item r-item"
-         
-        >
-          Home
-        </NuxtLink>
+        <NuxtLink to="/" class="nav-item r-item"> Home </NuxtLink>
       </li>
       <li class="site-inner-nav-item">
-        <NuxtLink
-          to="/holidaypackages"
-          class="nav-item r-item"
-          
-        >
+        <NuxtLink to="/holiday-packages" class="nav-item r-item">
           Holiday Packages
         </NuxtLink>
       </li>
       <li class="site-inner-nav-item">
-        <NuxtLink
-          to="/bestdeals"
-          class="nav-item r-item"
-          
-        >
+        <NuxtLink to="/best-deals" class="nav-item r-item">
           Best Deal
         </NuxtLink>
       </li>
       <li class="site-inner-nav-item">
-        <NuxtLink
-          to="/services"
-          class="nav-item r-item"
-        >
+        <NuxtLink to="/services-page" class="nav-item r-item">
           Service
         </NuxtLink>
       </li>
       <li class="site-inner-nav-item">
-        <NuxtLink
-          to="/about"
-          class="nav-item r-item"
-         
-        >
-          About
-        </NuxtLink>
+        <NuxtLink to="/about-page" class="nav-item r-item"> About </NuxtLink>
       </li>
       <li class="site-inner-nav-item">
-        <NuxtLink
-          to="/contact"
-          class="nav-item r-item"
-       
-        >
+        <NuxtLink to="/contact-page" class="nav-item r-item">
           Contact
         </NuxtLink>
       </li>
     </ul>
 
-    <languageselect />
-
+    <language-select />
   </nav>
 </template>
 
 <script>
-
 export default {
-  name: "travelnav",
+  name: "travel-nav",
 
   methods: {
     naviFunction(e) {

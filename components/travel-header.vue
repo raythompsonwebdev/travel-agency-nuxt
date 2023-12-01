@@ -26,7 +26,7 @@ import phoneImage from "@/assets/images/Telephone.png";
 import logo from "@/assets/images/travel-agency-website-logo-copy.png";
 
 export default {
-  name: "travelheader",
+  name: "travel-header",
   data() {
     return {
       phoneNumber: "0208-365-1452",

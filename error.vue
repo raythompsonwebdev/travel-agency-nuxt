@@ -1,14 +1,25 @@
 <template>
-  <!--wrapper-->
   <div id="wrapper">
     <travel-header />
     <travel-nav />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <main id="page-content">
+      <p>{{ error.statusCode }}</p>
+      <p>Ooops.</p>
+      <p>{{ error.message }}</p>
+      <button class="bestdeal-link" @click="handleError">Go Home...</button>
+    </main>
   </div>
   <travel-footer />
 </template>
+
+<script setup>
+defineProps({
+  error: Object,
+});
+
+// eslint-disable-next-line no-undef
+const handleError = () => clearError({ redirect: "/" });
+</script>
 
 <style lang="scss">
 //@import "assets/scss/main";

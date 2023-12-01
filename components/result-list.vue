@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import ResultListItem from "@/components/ResultListItem.vue";
+import ResultListItem from "@/components/resultlist-item.vue";
 
 export default {
-  name: "ResultList",
+  name: "result-list",
   props: ["products"],
   components: {
     ResultListItem,

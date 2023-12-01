@@ -62,7 +62,7 @@
 <script>
 //import axios from "axios";
 export default {
-  name: "ContactForm",
+  name: "contact-form",
 
   data() {
     return {

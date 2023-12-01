@@ -17,10 +17,7 @@
           {{ holidaypackages.available }}
         </p>
         <p class="holiday-pkg-txt">{{ holidaypackages.text }}</p>
-        <NuxtLink          
-          to= "/holidaypackages/"
-          class="holiday-pkg-link"         
-        >
+        <NuxtLink to="/holidaypackages/" class="holiday-pkg-link">
           View Details
         </NuxtLink>
       </figcaption>
@@ -29,21 +26,19 @@
 </template>
 
 <script>
-
-  export default {
-    name: "holidaypackagecard",
-    props: {
-      holidaypackages: {
-        type: Object,
-        default: null,
-      },
+export default {
+  name: "holidaypackage-card",
+  props: {
+    holidaypackages: {
+      type: Object,
+      default: null,
     },
-    
-    flushCom() {
-      this.$router.go();
-    },
-  };
+  },
 
+  flushCom() {
+    this.$router.go();
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

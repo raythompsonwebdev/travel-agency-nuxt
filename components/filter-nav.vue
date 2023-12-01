@@ -79,11 +79,8 @@
 </template>
 
 <script>
-
-
-
 export default {
-  name: "filternav",
+  name: "filter-nav",
   props: {
     seasons: {
       type: Array,

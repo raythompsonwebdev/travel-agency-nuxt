@@ -7,8 +7,8 @@
           id="flag-img"
           v-bind:src="
             selected !== ' '
-              ? `@/assets/images/flags/${selected}.jpg`
-              : `@/assets/images/flags/default.jpg`
+              ? `/images/flags/${selected}.jpg`
+              : `/images/flags/default.jpg`
           "
           :alt="'flag image'"
         />
@@ -36,7 +36,7 @@ import languageselect from "@/assets/json/languageitems.json";
 //import defaultImage from `@/assets/images/flags/png/default.png`;
 
 export default {
-  name: "languageselect",
+  name: "language-select",
   data() {
     return {
       selected: " ",
@@ -68,7 +68,7 @@ export default {
   methods: {
     itemsSearched(id) {
       this.selected = id;
-    },    
+    },
   },
 };
 </script>

@@ -3,7 +3,7 @@
     <button id="side-bar-btn" @click="sideBarFunction">SIDE</button>
 
     <aside id="home-page-sidebar" class="hide">
-      <searchform />
+      <search-form />
       <!-- <destinations destinations="destinations" /> -->
       <destinations />
     </aside>
@@ -14,7 +14,7 @@
       </figure>
 
       <!-- <featuredholidays :featuredholidayitems="featuredholidayitems" /> -->
-       <featuredholidays />
+      <featured-holidays />
     </main>
 
     <div class="clearfix" />
@@ -22,7 +22,6 @@
 </template>
 
 <script>
-
 import bannerImage from "@/assets/images/travel-agency-website-banner-image.jpg";
 
 export default {
@@ -33,14 +32,14 @@ export default {
       bannerImage,
     };
   },
-//   async created() {
-//     const result = await axios.get("/api/home");
-//     const { data } = result;
-//     const { destinationitems } = data[0];
-//     const { featuredholidayitems } = data[0];
-//     this.destinationitems = destinationitems;
-//     this.featuredholidayitems = featuredholidayitems;
-//   },
+  //   async created() {
+  //     const result = await axios.get("/api/home");
+  //     const { data } = result;
+  //     const { destinationitems } = data[0];
+  //     const { featuredholidayitems } = data[0];
+  //     this.destinationitems = destinationitems;
+  //     this.featuredholidayitems = featuredholidayitems;
+  //   },
   methods: {
     sideBarFunction(event) {
       event.preventDefault();

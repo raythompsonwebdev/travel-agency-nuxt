@@ -717,6 +717,8 @@
   width: 80%;
   margin: 0;
   font-size: 1em;
+  padding-top: 1em;
+  float:none;
 }
 #contact-details {
   background-color: $colorwhite1;
@@ -1277,7 +1279,7 @@
     font-size: 1em;
   }
   .logo-span:last-of-type {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
 
   .contact {
@@ -1575,6 +1577,7 @@
     width: 20%;
     position: unset;
     float: left;
+    padding-top: 1em;
   }
   #contact-details {
     gap: 0.25em;
@@ -1939,7 +1942,7 @@
     font-size: 1em;
   }
   .logo-span:last-of-type {
-    font-size: 1.3em;
+    font-size: 1.4em;
   }
 
   .contact {
@@ -2571,7 +2574,7 @@
     font-size: 1em;
   }
   .logo-span:last-of-type {
-    font-size: 1.2em;
+    font-size: 1.3em;
   }
 
   .contact {

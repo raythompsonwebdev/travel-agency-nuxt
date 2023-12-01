@@ -1,6 +1,6 @@
 <template>
   <div class="BestDeals">
-    <filternav
+    <filter-nav
       :seasons="seasons"
       :prices="prices"
       :locations="locations"
@@ -9,26 +9,25 @@
     />
     <main id="holiday-items">
       <!-- <transition-group name="fade" tag="div"> -->
-        <div v-for="bestdealitem in filteredPacks" :key="bestdealitem.id">
-          <bestdealitemcard :bestdealitem="bestdealitem" />
-        </div>
+      <div v-for="bestdealitem in filteredPacks" :key="bestdealitem.id">
+        <bestdealitem-card :bestdealitem="bestdealitem" />
+      </div>
       <!-- </transition-group> -->
     </main>
-
-
   </div>
 </template>
 
 <script>
-
-
 import bestdealitems from "@/assets/json/bestdeals.json";
-import {locations, prices, ratings, seasons} from "@/assets/json/filternav.json";
-
-
+import {
+  locations,
+  prices,
+  ratings,
+  seasons,
+} from "@/assets/json/filternav.json";
 
 export default {
-  name: "bestdeals", 
+  name: "best-deals",
   data() {
     return {
       seasons,
@@ -51,7 +50,7 @@ export default {
         "autumn" === this.selected
       ) {
         return this.bestdealitems.filter(
-          (bestdealitem) => bestdealitem.season === this.selected
+          (bestdealitem) => bestdealitem.season === this.selected,
         );
       } else if (
         "london" === this.selected ||
@@ -65,7 +64,7 @@ export default {
         "tajmahal" === this.selected
       ) {
         return this.bestdealitems.filter(
-          (bestdealitem) => bestdealitem.location === this.selected
+          (bestdealitem) => bestdealitem.location === this.selected,
         );
       } else if (
         "one" === this.selected ||
@@ -75,7 +74,7 @@ export default {
         "five" === this.selected
       ) {
         return this.bestdealitems.filter(
-          (bestdealitem) => bestdealitem.rating === this.selected
+          (bestdealitem) => bestdealitem.rating === this.selected,
         );
       } else if (
         "$399 - $499" === this.selected ||
@@ -85,7 +84,7 @@ export default {
         "$999 +" === this.selected
       ) {
         return this.bestdealitems.filter(
-          (bestdealitem) => bestdealitem.price === this.selected
+          (bestdealitem) => bestdealitem.price === this.selected,
         );
       } else {
         return this.bestdealitems;
@@ -97,8 +96,7 @@ export default {
   //   // const { data } = result;
   //   this.bestdealitems = data;
   // },
- 
-  
+
   methods: {
     itemsSearched(id) {
       this.selected = id;
@@ -109,6 +107,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
