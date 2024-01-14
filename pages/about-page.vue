@@ -72,11 +72,6 @@
 </template>
 
 <script>
-// eslint-disable-next-line no-undef
-useHead({
-  title: "Travel Agency | About",
-});
-
 export default {
   name: "about-page",
 

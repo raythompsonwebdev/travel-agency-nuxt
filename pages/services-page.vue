@@ -125,9 +125,6 @@ import hotelRoom from "@/assets/images/travel-agency-website-hotel-room-image.jp
 
 export default {
   name: "service-page",
-  // components: {
-  //   sidebanner,
-  // },
   data() {
     return {
       show: "true",

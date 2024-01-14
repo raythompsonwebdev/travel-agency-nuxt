@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   // },
   ssr: false,
   devtools: { enabled: true },
-  css : [ "~/assets/scss/main.scss"],
+  css: ["~/assets/scss/main.scss"],
   // vite: {
   //   css: {
   //     preprocessorOptions: {
@@ -15,14 +15,15 @@ export default defineNuxtConfig({
   //     }
   //   }
   // },
-  postcss : {  
+  postcss: {
     plugins: {
       autoprefixer: {},
-    }
+    },
   },
   app: {
     pageTransition: {
-      name: 'page',     
-    }
+      name: "page",
+    },
   },
-})
+  modules: ["@nuxt/image"],
+});

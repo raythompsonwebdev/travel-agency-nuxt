@@ -29,11 +29,6 @@ import {
   seasons,
 } from "@/assets/json/filternav.json";
 
-// eslint-disable-next-line no-undef
-useHead({
-  title: "Travel Agency | Holiday Packages",
-});
-
 export default {
   name: "holiday-packages",
   data() {

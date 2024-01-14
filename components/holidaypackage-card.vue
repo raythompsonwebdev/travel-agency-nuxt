@@ -5,10 +5,12 @@
       <span class="holiday-pkg-offer">{{ holidaypackages.price }}</span>
     </span>
     <figure class="holiday-pkg-item">
-      <img
+      <NuxtImg
         :src="holidaypackages.url"
         :alt="holidaypackages.title"
         class="holiday-pkg-img"
+        width="188"
+        height="152"
       />
       <figcaption class="holiday-pkg-caption">
         <p class="holiday-pkg-txt">
@@ -34,7 +36,12 @@ export default {
       default: null,
     },
   },
-
+  data() {
+    return {
+      // eslint-disable-next-line no-undef
+      //bestdealitem,
+    };
+  },
   flushCom() {
     this.$router.go();
   },

@@ -2,10 +2,12 @@
   <div v-if="singleholidaypackage" class="singleholidaypackage">
     <article class="single-item-details">
       <h2 class="single-item-title">{{ singleholidaypackage[0].title }}</h2>
-      <h2 class="single-item-title">{{ id }}</h2> 
+      <h2 class="single-item-title">{{ id }}</h2>
       <span class="single-item-price">
         from
-        <span class="single-item-offer">{{ singleholidaypackage[0].price }}</span>
+        <span class="single-item-offer">{{
+          singleholidaypackage[0].price
+        }}</span>
       </span>
       <p class="single-item-text">{{ singleholidaypackage[0].text }}</p>
 
@@ -33,19 +35,17 @@ const route = useRoute()
 const { data: mountain } = await useFetch(`/api/mountains/${route.params.slug}`)
 </script> -->
 
-<!-- <script setup>
-  const { id } = useRoute().params
-</script> -->
+<script setup>
+// eslint-disable-next-line no-undef
+const { id } = useRoute().params;
+</script>
 
 <script>
-
 import singleholidaypackage from "@/assets/json/holidaypackages.json";
 
-const { id } = useRoute().params
-
 export default {
-  name: "holidaypackage",
-  title: "Holiday Package Page",  
+  name: "holiday--package",
+  title: "Holiday Package Page",
   data() {
     return {
       singleholidaypackage,
@@ -62,11 +62,9 @@ export default {
     // },
 
     initData() {
-      const result = singleholidaypackage.filter((single)=>{
-        return single.id === id;        
-      }); 
+      const result = singleholidaypackage.filter((single) => single.id === id);
       this.singleholidaypackage = result;
-    }
+    },
   },
   created() {
     this.initData();
@@ -79,7 +77,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .singleholidaypackage {
   border: 2px #ededeb solid;
   margin: 2em auto;

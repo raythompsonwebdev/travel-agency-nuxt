@@ -1,17 +1,17 @@
 <template>
   <div>
-    <ResultList :products="searchResult" />
+    <resultlist :products="searchResult" />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import ResultList from "@/components/resultlist.vue";
+import resultlist from "@/components/result-list.vue";
 export default {
   name: "result-page",
   props: ["results"],
   components: {
-    ResultList,
+    resultlist,
   },
   data() {
     return {

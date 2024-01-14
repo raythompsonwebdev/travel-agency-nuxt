@@ -1,10 +1,12 @@
 <template>
   <article class="bestdeal-details">
     <figure v-if="bestdealitem" class="bestdeal-details-item">
-      <img
+      <NuxtImg
         :src="bestdealitem.url"
-        :alt="bestdealitem.title"
         class="bestdeal-details-img"
+        :alt="bestdealitem.title"
+        width="150"
+        height="120"
       />
       <figcaption class="bestdeal-details-caption">
         <h1 class="bestdeal-details-title">{{ bestdealitem.title }}</h1>
@@ -15,7 +17,9 @@
         </span>
         <p class="bestdeal-text">Location: {{ bestdealitem.location }}.</p>
         <p class="bestdeal-text">Available: {{ bestdealitem.month }}.</p>
-        <NuxtLink class="bestdeal-link" to="/bestdeal"> View Details </NuxtLink>
+        <NuxtLink to="/best-deals/1" class="bestdeal-link">
+          View Details
+        </NuxtLink>
       </figcaption>
     </figure>
   </article>
@@ -29,6 +33,12 @@ export default {
       type: Object,
       default: null,
     },
+  },
+  data() {
+    return {
+      // eslint-disable-next-line no-undef
+      //bestdealitem,
+    };
   },
 };
 </script>
