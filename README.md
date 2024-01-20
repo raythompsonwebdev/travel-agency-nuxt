@@ -1,16 +1,17 @@
-
-# travel-agency-nuxt - nuxt 3
+# Travel-Agency-Nuxt
 
 ![travel Agency](/travel-agency-vue.png)
 
-# Introduction
+## Description
 
-Web application design is based on a photoshop templates downloaded from website [php.jabber.com](https://www.phpjabbers.com/). mockup of online holiday booking website.
+Travel Agency Web application based on photoshop website template design downloaded from website [php.jabber.com](https://www.phpjabbers.com/).
 
-## Technologies
+Built using JS framework NuxtJS, this web application allows users to search for holiday destinations using search filter.
 
-- Nuxt 3
-- Sass
+## Features
+
+- Products Search Filters
+- Responsive Design viewable on most mobile devices.
 
 ## Tools
 
@@ -20,11 +21,6 @@ Web application design is based on a photoshop templates downloaded from website
 - [eslint](https://eslint.org/)
 - [postcss](https://postcss.org/)
 - [stylelint](https://stylelint.io/)
-
-
-# Nuxt 3 Minimal Starter
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
 
@@ -97,3 +93,5 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
