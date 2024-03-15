@@ -4,9 +4,9 @@
     <form id="holiday-search-form" @submit.prevent="onSubmit">
       <label class="label-wide" for="locations">
         Where are you going ?
-        <select v-model="locations" name="locations" class="select-wide">
+        <select name="locations" class="select-wide">
           <option
-            v-for="location in searchform.searchformitems[0].locations"
+            v-for="location in searchform.locations"
             :key="location.id"
             :value="location"
           >
@@ -17,30 +17,22 @@
 
       <label for="date" class="label-wide"
         ><span> When are you going ? </span>
-        <select v-model="date" name="date" class="select-date-year">
-          <option
-            v-for="date in searchform.searchformitems[1].date"
-            :key="date.id"
-            :value="date"
-          >
+        <select name="date" class="select-date-year">
+          <option v-for="date in searchform.date" :key="date.id" :value="date">
             {{ date }}
           </option>
         </select>
-        <select id="select-month" v-model="month" name="month">
+        <select id="select-month" name="month">
           <option
-            v-for="month in searchform.searchformitems[2].month"
+            v-for="month in searchform.month"
             :key="month.id"
             :value="month"
           >
             {{ month }}
           </option>
         </select>
-        <select v-model="year" name="year" class="select-date-year">
-          <option
-            v-for="year in searchform.searchformitems[3].year"
-            :key="year.id"
-            :value="year"
-          >
+        <select name="year" class="select-date-year">
+          <option v-for="year in searchform.year" :key="year.id" :value="year">
             {{ year }}
           </option>
         </select>
@@ -49,9 +41,9 @@
       <label class="label-wide" for="duration">
         Duration
 
-        <select v-model="duration" name="duration" class="select-wide">
+        <select name="duration" class="select-wide">
           <option
-            v-for="duration in searchform.searchformitems[4].duration"
+            v-for="duration in searchform.duration"
             :key="duration.id"
             :value="duration"
           >
@@ -62,9 +54,9 @@
 
       <label class="label-half" for="board"
         >Board
-        <select v-model="board" name="board" class="select-half">
+        <select name="board" class="select-half">
           <option
-            v-for="board in searchform.searchformitems[5].board"
+            v-for="board in searchform.board"
             :key="board.id"
             :value="board"
           >
@@ -75,12 +67,8 @@
 
       <label class="label-half" for="star"
         >Star
-        <select v-model="star" name="star" class="select-half">
-          <option
-            v-for="star in searchform.searchformitems[6].star"
-            :key="star.id"
-            :value="star"
-          >
+        <select name="star" class="select-half">
+          <option v-for="star in searchform.star" :key="star.id" :value="star">
             {{ star }}
           </option>
         </select>
@@ -88,9 +76,9 @@
 
       <label class="label-half" for="adults"
         >Adults
-        <select v-model.number="adults" name="adults" class="select-half">
+        <select name="adults" class="select-half">
           <option
-            v-for="adult in searchform.searchformitems[7].adults"
+            v-for="adult in searchform.adults"
             :key="adult.id"
             :value="adult"
           >
@@ -98,11 +86,12 @@
           </option>
         </select>
       </label>
+
       <label class="label-half" for="children"
         >Children 0-17
-        <select v-model.number="children" name="children" class="select-half">
+        <select name="children" class="select-half">
           <option
-            v-for="child in searchform.searchformitems[8].children"
+            v-for="child in searchform.children"
             :key="child.id"
             :value="child"
           >
@@ -117,13 +106,25 @@
 </template>
 
 <script>
-import searchform from "@/assets/json/searchform.json";
-
 export default {
   name: "search-form",
+  props: {
+    searchform: {
+      type: Array,
+      default: null,
+    },
+  },
   data() {
     return {
-      searchform,
+      // locations,
+      // date,
+      // month,
+      // year,
+      // duration,
+      // board,
+      // star,
+      // adults,
+      // children,
     };
   },
 

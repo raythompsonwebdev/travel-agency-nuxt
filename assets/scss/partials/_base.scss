@@ -20,7 +20,7 @@ html {
 }
 
 ::selection {
-  background: $color-base;
+  background: $telephone-bg-color;
   text-shadow: none;
 }
 
@@ -43,7 +43,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid $colorwhite1;
+  border-top: 1px solid $site-background;
   margin: 1em 0;
   padding: 0;
 }
@@ -111,7 +111,7 @@ textarea {
 
 .browsehappy {
   margin: 0.2em 0;
-  background: $colorwhite1;
+  background: $site-background;
   color: $colorblk;
   padding: 0.2em 0;
 }
@@ -129,13 +129,13 @@ img {
 }
 
 body {
-  background-image: url("assets/images/travel-agency-website-bg.jpg");
+  background-image: url("@/assets/images/travel-agency-website-bg.jpg");
   background-repeat: no-repeat;
   background-position: left bottom;
   background-attachment: fixed;
   background-size: cover;
   margin: 0;
-  background-color: $colorblue5;
+  background-color: $bg-color;
   padding: 0;
   line-height: 1;
   font-family: $font-style1;

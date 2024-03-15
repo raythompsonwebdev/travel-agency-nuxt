@@ -3,7 +3,7 @@
   <section class="holiday-search-sidebar">
     <h2 id="holiday-search-title">Top Destinations</h2>
     <div
-      v-for="destination in destinations[0].destinations"
+      v-for="destination in destinations"
       :key="destination.id"
       class="destinations"
     >
@@ -25,16 +25,21 @@
 </template>
 
 <script>
-import destinations from "@/assets/json/destinations.json";
 export default {
   name: "destinations",
   // setup(props) {
   //   // setup() receives props as the first argument.
   //   console.log(props.destinations)
   // },
+  props: {
+    destinations: {
+      type: Array,
+      default: null,
+    },
+  },
   data() {
     return {
-      destinations,
+      // destinations,
     };
   },
 };

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import phoneImage from "@/assets/images/Telephone.png";
+import phoneImage from "@/assets/images/contact/Telephone.png";
 import logo from "@/assets/images/travel-agency-website-logo-copy.png";
 
 export default {

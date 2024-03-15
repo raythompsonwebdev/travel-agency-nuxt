@@ -5,9 +5,9 @@
     <side-banner />
 
     <main id="page-content">
-      <h2>Lorem ipsum dolor sit amet, consectetur</h2>
+      <h2 class="page-content-title">Lorem Ipsum Dolor Sit Amet</h2>
 
-      <p>
+      <p class="page-content-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit
         dolor sequi voluptatem esse doloribus libero commodi ea debitis id
         nostrum odio velit impedit vitae tenetur voluptates vero beatae
@@ -16,18 +16,9 @@
         debitis id nostrum odio velit impedit vitae tenetur voluptates vero
         beatae excepturi.
       </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit
-        dolor sequi voluptatem esse doloribus libero commodi ea debitis id
-        nostrum odio velit impedit vitae tenetur voluptates vero beatae
-        excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim
-        odit dolor sequi voluptatem esse doloribus libero commodi ea debitis id
-        nostrum odio velit impedit vitae tenetur voluptates vero beatae
-        excepturi
-      </p>
       <br />
       <div class="services-card">
-        <h3 class="services-card-title">Enim odit dolor sequi voluptatem</h3>
+        <h3 class="services-card-title">Nunc quis purus sed lorem</h3>
         <figure class="services-card-item">
           <img
             class="service-box-img"
@@ -49,7 +40,7 @@
       </div>
 
       <div class="services-card">
-        <h3 class="services-card-title">Enim odit dolor sequi voluptatem</h3>
+        <h3 class="services-card-title">Nunc quis purus sed lorem</h3>
         <figure class="services-card-item">
           <img
             class="service-box-img"
@@ -73,7 +64,7 @@
       </div>
 
       <div class="services-card">
-        <h3 class="services-card-title">Enim odit dolor sequi voluptatem</h3>
+        <h3 class="services-card-title">Nunc quis purus sed lorem</h3>
         <figure class="services-card-item">
           <img
             class="service-box-img"
@@ -94,8 +85,9 @@
         </figure>
       </div>
 
+      <div class="clearfix" />
       <br />
-      <p>
+      <p class="page-content-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit
         dolor sequi voluptatem esse doloribus libero commodi ea debitis id
         nostrum odio velit impedit vitae tenetur voluptates vero beatae
@@ -105,7 +97,7 @@
         beatae excepturi.
       </p>
 
-      <p>
+      <p class="page-content-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim odit
         dolor sequi voluptatem esse doloribus libero commodi ea debitis id
         nostrum odio velit impedit vitae tenetur voluptates vero beatae
@@ -119,9 +111,9 @@
 </template>
 
 <script>
-import customerService from "@/assets/images/travel-agency-website-customer-service-image.jpg";
-import busTours from "@/assets/images/travel-agency-website-bus-tours-image.jpg";
-import hotelRoom from "@/assets/images/travel-agency-website-hotel-room-image.jpg";
+import customerService from "@/assets/images/service/travel-agency-website-customer-service-image.jpg";
+import busTours from "@/assets/images/service/travel-agency-website-bus-tours-image.jpg";
+import hotelRoom from "@/assets/images/service/travel-agency-website-hotel-room-image.jpg";
 
 export default {
   name: "service-page",

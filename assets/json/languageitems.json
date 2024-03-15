@@ -3,42 +3,42 @@
     "id": 1,
     "value": "default",
     "text": " ",
-    "url": "/images/flags/United_Kingdom.jpg"
+    "url": "@/assets/images/flags/United_Kingdom.png"
   },
   {
     "id": 2,
-    "value": "United_Kingdom",
-    "text": "United_Kingdom",
-    "url": "/images/flags/United_Kingdom.jpg"
+    "value": "Bangkok",
+    "text": "Bangkok",
+    "url": "@/assets/images/flags/Bangkok.png"
   },
   {
     "id": 3,
     "value": "Germany",
     "text": "Germany",
-    "url": "/images/flags/Germany.jpg"
+    "url": "@/assets/images/flags/Germany.png"
   },
   {
     "id": 4,
     "value": "United_States",
     "text": "United_States",
-    "url": "/images/flags/USA.gif"
+    "url": "@/assets/images/flags/United_States.png"
   },
   {
     "id": 5,
-    "value": "Jamaica",
-    "text": "Jamaica",
-    "url": "/images/flags/Jamaica.jpg"
+    "value": "India",
+    "text": "India",
+    "url": "@/assets/images/flags/India.png"
   },
   {
     "id": 6,
     "value": "France",
     "text": "France",
-    "url": "/images/flags/France.jpg"
+    "url": "@/assets/images/flags/France.png"
   },
   {
     "id": 7,
     "value": "Spain",
     "text": "Spain",
-    "url": "/images/flags/Spain.jpg"
+    "url": "@/assets/images/flags/Spain.png"
   }
 ]

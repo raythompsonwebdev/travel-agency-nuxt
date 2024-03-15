@@ -1,47 +1,64 @@
 <template>
-  <div>
-    <h1>{{ title }}</h1>
-    <p>Text:</p>
-    <cartlist
-      :products="cartItems"
-      v-on:remove-from-cart="removeFromCart($event)"
-    />
-    <button>Remove</button>
-    <p>Total: ${{ totalPrice }}</p>
-    <button>Proceed to checkout</button>
+  <div class="Cart">
+    <h2>{{ title }}</h2>
+    <transition-group name="fade" tag="div" id="cart-items">
+      <div v-for="(cartItem, index) in cartItems" :key="index">
+        <CartItems :cartItem="cartItem" />
+      </div>
+    </transition-group>
   </div>
 </template>
 
 <script>
-export default {
-  name: "cart-page",
+import CartItems from "@/components/CartItems";
+import axios from "axios";
 
+export default {
+  name: "CartPage",
+  components: {
+    CartItems,
+  },
   data() {
     return {
-      title: "Shopping Cart page",
-      cartItems: {},
+      title: "Cart page",
+      cartItems: [],
     };
   },
-  computed: {
-    totalPrice() {
-      return this.cartItems.reduce((sum, item) => sum + Number(item.price), 0);
-    },
-  },
-  methods: {
-    async removeFromCart(productId) {
-      // const result = await axios.delete(`/api/users/12345/cart/${productId}`);
-
-      console.log(productId);
-      //this.cartItems = result.data;
-    },
-  },
   async created() {
-    // const result = await axios.get("/api/users/12345/cart");
-    // const cartItems = result.data;
-    // this.cartItems = cartItems;
+    const result = await axios.get("/api/users/12345/cart");
+    const { data } = result;
+    this.cartItems = data;
   },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss"></style>
+<style lang="scss">
+.fade-enter-active {
+  animation: coming 0.5s;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+.fade-leave-active {
+  animation: going 0.5s;
+}
+@keyframes coming {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes going {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+</style>

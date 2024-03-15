@@ -1,10 +1,10 @@
 <template>
   <!--Featured Holiday Package-->
-  <section id="holiday-offers">
+  <section id="holiday-offers" v-if="featuredholidayitems">
     <h2 id="holiday-offers-title">Featured Holiday Package</h2>
 
     <div
-      v-for="featuredholiday in featuredholidayitems.featuredholidayitems"
+      v-for="featuredholiday in featuredholidayitems"
       :key="featuredholiday.id"
       class="offer-item-div"
     >
@@ -31,14 +31,17 @@
 </template>
 
 <script>
-import featuredholidayitems from "@/assets/json/featured.json";
-
 export default {
   name: "featured-holidays",
-
+  props: {
+    featuredholidayitems: {
+      type: Array,
+      default: null,
+    },
+  },
   data() {
     return {
-      featuredholidayitems,
+      // featuredholidayitems,
     };
   },
   computed: {

@@ -36,7 +36,6 @@ export default {
   name: "side-banner",
   data() {
     return {
-      show: "true",
       bannerImage,
       bannerImageLabel,
     };

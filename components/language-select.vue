@@ -7,8 +7,8 @@
           id="flag-img"
           v-bind:src="
             selected !== ' '
-              ? `/images/flags/${selected}.jpg`
-              : `/images/flags/default.jpg`
+              ? `/images/flags/${selected}.png`
+              : `/images/flags/default.png`
           "
           :alt="'flag image'"
         />
@@ -33,14 +33,14 @@
 
 <script>
 import languageselect from "@/assets/json/languageitems.json";
-//import defaultImage from `@/assets/images/flags/png/default.png`;
+import defaultImage from "@/assets/images/flags/default.png";
 
 export default {
   name: "language-select",
   data() {
     return {
       selected: " ",
-      // defaultImage ,
+      defaultImage,
       languageselect,
     };
   },
@@ -48,13 +48,13 @@ export default {
     onChangeImg() {
       if (this.selected === "default") {
         return this.languageselect;
-      } else if (this.selected === "United_Kingdom") {
+      } else if (this.selected === "Bangkok") {
         return this.languageselect;
       } else if (this.selected === "Germany") {
         return this.languageselect;
       } else if (this.selected === "United_States") {
         return this.languageselect;
-      } else if (this.selected === "Jamaica") {
+      } else if (this.selected === "India") {
         return this.languageselect;
       } else if (this.selected === "France") {
         return this.languageselect;

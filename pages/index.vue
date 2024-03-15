@@ -3,9 +3,8 @@
     <button id="side-bar-btn" @click="sideBarFunction">SIDE</button>
 
     <aside id="home-page-sidebar" class="hide">
-      <search-form />
-      <!-- <destinations destinations="destinations" /> -->
-      <destinations />
+      <search-form :searchform="searchform" />
+      <destinations :destinations="destinations" />
     </aside>
 
     <main id="home-page-content">
@@ -13,8 +12,7 @@
         <img :src="bannerImage" :alt="'banner-image'" id="banner-img" />
       </figure>
 
-      <!-- <featuredholidays :featuredholidayitems="featuredholidayitems" /> -->
-      <featured-holidays />
+      <featured-holidays :featuredholidayitems="featuredHolidays" />
     </main>
 
     <div class="clearfix" />
@@ -22,14 +20,20 @@
 </template>
 
 <script>
+import destinations from "@/assets/json/destinations.json";
+import featuredHolidays from "@/assets/json/featured.json";
+import searchform from "@/assets/json/searchform.json";
+
 import bannerImage from "@/assets/images/travel-agency-website-banner-image.jpg";
 
 export default {
   name: "HomePage",
   data() {
     return {
-      show: true,
       bannerImage,
+      featuredHolidays,
+      destinations,
+      searchform,
     };
   },
   //   async created() {
