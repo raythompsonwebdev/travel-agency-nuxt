@@ -36,9 +36,9 @@
 </template>
 
 <script>
-import addressImage from "/images/Address.png";
-import envelopeImage from "/images/envelope.png";
-import telephoneImage from "/images/Telephone.png";
+import addressImage from "/images/contact/Address.png";
+import envelopeImage from "/images/contact/envelope.png";
+import telephoneImage from "/images/contact/Telephone.png";
 
 export default {
   name: "contact-page",

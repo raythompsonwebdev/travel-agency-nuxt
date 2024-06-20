@@ -11,7 +11,6 @@
 </template>
 
 <style lang="scss">
-//@import "assets/scss/main";
 @keyframes coming {
   from {
     transform: translateX(-200px);
@@ -32,14 +31,14 @@
     opacity: 0;
   }
 }
-.page-enter-active,
-.page-leave-active {
+.layout-enter-active,
+.layout-leave-active {
   animation: coming 0.5s;
   animation-delay: 0.5s;
   opacity: 0;
 }
-.page-enter-from,
-.page-leave-to {
+.layout-enter-from,
+.layout-leave-to {
   animation: going 0.5s;
 }
 </style>
